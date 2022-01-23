@@ -18,7 +18,7 @@ public class Change {
             throw new IllegalArgumentException("Cannot change a negative amount");
         }
         final int[] availableCoins = new int[8];
-        // Let's ue a copy here, in case e don't have enough coins we can abort the operation
+        // Let's use a copy here, in case e don't have enough coins we can abort the operation
         System.arraycopy(this.availableCoins, 0, availableCoins, 0, COINS.length);
         final int[] result = getChange(availableCoins, amount, new int[COINS.length], 0);
         System.arraycopy(availableCoins, 0, this.availableCoins, 0, COINS.length);
